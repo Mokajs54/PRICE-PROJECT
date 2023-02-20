@@ -38,3 +38,22 @@
     <script src="app.js"></script>
   </body>
 </html>
+// récupérer le bouton et la zone d'affichage du gagnant
+const btnDraw = document.getElementById('btn-draw');
+const winner = document.getElementById('winner');
+
+// liste des participants
+const participants = ['Alice', 'Bob', 'Charlie', 'Dave', 'Eve', 'Jessy', 'Jade', 'Laura'];
+
+// fonction pour effectuer le tirage au sort
+function drawWinner() {
+  // tirage au sort d'un gagnant aléatoire
+  const randomIndex = Math.floor(Math.random() * participants.length);
+  const randomWinner = participants[randomIndex];
+
+  // afficher le gagnant
+  winner.innerHTML = `Le gagnant est: ${randomWinner}`;
+}
+
+// ajouter un écouteur d'événement pour le clic sur le bouton
+btnDraw.addEventListener('click', drawWinner);
